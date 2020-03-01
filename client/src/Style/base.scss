@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+$mainColor: #c3c3c3;
+$secondColor: #222;
+$thirdColor: #555;
+
+%flatStyle {
+  box-shadow: 5px 5px 10px #4e4e4e, 
+              -5px -5px 10px #ffffff;
+}
+
+%dentStyle {
+  background: linear-gradient(145deg, #d1d1d1, #b0b0b0);
+  box-shadow: 5px 5px 10px #4e4e4e, 
+              -5px -5px 10px #ffffff;
+}
+
+%bulgeStyle {
+  background: linear-gradient(145deg, #b0b0b0, #d1d1d1);
+  box-shadow: 5px 5px 10px #4e4e4e, 
+              -5px -5px 10px #ffffff;
+}
+
+%deepStyle {
+  box-shadow: inset 5px 5px 10px #4e4e4e, 
+              inset -5px -5px 10px #ffffff;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: $mainColor;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+  background: $mainColor;
+  padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+  @extend %dentStyle;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul li {
+  color: $secondColor;
+  cursor: pointer;
+  padding: 1rem;
+  display: block;
+  white-space: nowrap;
+}
+
+nav ul li:hover {
+  color: $thirdColor;
+  transition: ease-out;
+}
+
+nav ul li.logo {
+  font-size: 2rem;
+  font-style: bold;
+}
+
+nav ul li.item {
+  font-size: 1.268rem;
+}
+nav ul li.btn {
+  font-size: 1.268rem;
+}
+
+nav ul li.toggle {
+  order: 1;
+}
+
+nav ul li.btn {
+  order: 2;
+}
+
+.bars {
+  background: $secondColor;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 1.5rem;
+}
+
+.bars::before,
+.bars::after {
+  background: $secondColor;
+  content: '';
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  width: 1.5rem;
+}
+
+.bars::before {
+  top: 5px;
+}
+
+.bars::after {
+  top: -5px;
+}
